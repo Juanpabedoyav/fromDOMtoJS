@@ -1,6 +1,6 @@
 import { askGpt } from "@/utils/askGpt"
 import CodeMirror from "@uiw/react-codemirror"
-import { javascript } from "@codemirror/lang-javascript"
+import {html  } from "@codemirror/lang-html"
 export const Input = () => {
 
   const handleSubmit =(e: React.FormEvent<HTMLFormElement>) => {
@@ -16,7 +16,7 @@ export const Input = () => {
           theme={"dark"}
           value="console.log('hello world!');"
           height="350px"
-          extensions={[javascript({ jsx: true })]}
+          extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
           onChange={(value) => console.log(value)}
         />
         <button>Generate</button>
