@@ -26,6 +26,8 @@ module.exports = {
       "error",
       2
     ],
+    "@typescript-eslint/no-var-requires": "warn",
+
     "linebreak-style": 0,
     "quotes": [
       "error",
