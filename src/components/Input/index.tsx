@@ -3,6 +3,7 @@ import {tokyoNight} from "@uiw/codemirror-theme-tokyo-night"
 import {html} from "@codemirror/lang-html"
 import { useContext} from "react"
 import { MappingContext } from "@/context/Mapping/MappingContext"
+import { askGpt } from "@/utils/askGpt"
 export const Input = () => {
   const {dispatch, body}= useContext(MappingContext)
 
@@ -13,7 +14,7 @@ export const Input = () => {
   }
   const handleSubmit =(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // askGpt()
+    askGpt()
   }
   return (
     <>
