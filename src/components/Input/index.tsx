@@ -1,23 +1,30 @@
-import { askGpt } from "@/utils/askGpt"
 import CodeMirror from "@uiw/react-codemirror"
-import { javascript } from "@codemirror/lang-javascript"
+import {tokyoNight} from "@uiw/codemirror-theme-tokyo-night"
+import {html} from "@codemirror/lang-html"
+import { useContext} from "react"
+import { MappingContext } from "@/context/Mapping/MappingContext"
 export const Input = () => {
+  const {dispatch, body}= useContext(MappingContext)
 
+  const handleChange = (codeHTML : string) => {
+    setTimeout(() => {
+      dispatch({type: "SET_BODY", payload: codeHTML})
+    }, 500)
+  }
   const handleSubmit =(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log("submit")
-    askGpt()
+    // askGpt()
   }
   return (
     <>
       <h1>Input</h1>
       <form onSubmit={handleSubmit}>
         <CodeMirror
-          theme={"dark"}
-          value="console.log('hello world!');"
+          theme={tokyoNight}
+          value={body}
           height="350px"
-          extensions={[javascript({ jsx: true })]}
-          onChange={(value) => console.log(value)}
+          extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
+          onChange={(value) => handleChange(value)}
         />
         <button>Generate</button>
       </form>
