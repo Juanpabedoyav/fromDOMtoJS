@@ -17,6 +17,7 @@ export const Input = () => {
           value="console.log('hello world!');"
           height="350px"
           extensions={[javascript({ jsx: true })]}
+          onChange={(value) => console.log(value)}
         />
         <button>Generate</button>
       </form>
