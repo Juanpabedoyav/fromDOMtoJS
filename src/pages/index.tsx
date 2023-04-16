@@ -9,7 +9,10 @@ export default function Home() {
   return (
     <>
       <Input/>
-      <Output/>
+      <Output code="(() => {
+          let out={};
+          return out;
+        })()"/>
     </>
   )
 }
