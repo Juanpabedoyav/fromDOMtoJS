@@ -3,7 +3,7 @@ const { Configuration, OpenAIApi } = require("openai")
 export const askGpt = async () => {
 
   const configuration = new Configuration({
-    apiKey: `${process.env.OPENAI_API_KEY}`,
+    apiKey: "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",
   })
   const openai = new OpenAIApi(configuration)
     

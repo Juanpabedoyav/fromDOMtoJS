@@ -1,20 +1,18 @@
 import { Input } from "@/components/Input"
 import { Output } from "@/components/Output"
-import { SectionGenerateSC, MainScreenSC } from "./styles"
+import {  MainScreenSC } from "./styles"
+import { Generate } from "@/components/Generate"
+import { useContext } from "react"
+import { MappingContext } from "@/context/Mapping/MappingContext"
 
 export const Main = () => {
+  const {mapping} = useContext(MappingContext)
   return (
     <>
-      <SectionGenerateSC>
-        <h2>AI Scrapping Generator </h2>
-        <button id="generate">Happy Scrapping!!</button>
-      </SectionGenerateSC>
+      <Generate/>
       <MainScreenSC>
         <Input/>
-        <Output code="(() => {
-        let out={};
-        return out;
-      })()"/>
+        <Output code={mapping}/>
       </MainScreenSC>
     </>
   )
