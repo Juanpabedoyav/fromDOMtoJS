@@ -1,6 +1,7 @@
 import { javascript } from "@codemirror/lang-javascript"
 import CodeMirror from "@uiw/react-codemirror"
 import { useEffect, useState } from "react"
+import { BlockCodeSC } from "../Input/style"
 
 
 interface OutputProps {
@@ -23,7 +24,7 @@ export const Output = ({code}: OutputProps) => {
     setCopyText("copied!")
   }
   return (
-    <div style={{position:"relative", bottom: "10px", display:"flex", flexDirection:"column", margin:"0.5rem"}}>
+    <BlockCodeSC>
       <h1>Output</h1>
       <CodeMirror
         theme={"dark"}
@@ -34,7 +35,8 @@ export const Output = ({code}: OutputProps) => {
         onChange={(value) => console.log(value)}
       />
       <button className="copy" onClick={copyToClipboard}>{copyText}</button>
-    </div>
+    </BlockCodeSC>
+
   )
 }
   

@@ -6,7 +6,7 @@ export const Main = () => {
   return (
     <>
       <ButtonGenerateSC>
-        <button>Happy Scrapping!!</button>
+        <button id="generate">Happy Scrapping!!</button>
       </ButtonGenerateSC>
       <MainScreenSC>
         <Input/>

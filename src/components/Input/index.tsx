@@ -4,6 +4,7 @@ import {html} from "@codemirror/lang-html"
 import { useContext} from "react"
 import { MappingContext } from "@/context/Mapping/MappingContext"
 import { askGpt } from "@/utils/askGpt"
+import { BlockCodeSC } from "./style"
 export const Input = () => {
   const {dispatch, body}= useContext(MappingContext)
 
@@ -17,8 +18,7 @@ export const Input = () => {
     askGpt()
   }
   return (
-    <div style={{position:"relative", bottom: "10px", display:"flex", flexDirection:"column", margin:"0.5rem"}}>
-
+    <BlockCodeSC>
       <h1>Input</h1>
       <CodeMirror
         theme={tokyoNight}
@@ -27,6 +27,6 @@ export const Input = () => {
         extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
         onChange={(value) => handleChange(value)}
       />
-    </div>
+    </BlockCodeSC>
   )
 }
