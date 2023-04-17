@@ -3,6 +3,8 @@ import {tokyoNight} from "@uiw/codemirror-theme-tokyo-night"
 import {html} from "@codemirror/lang-html"
 import { useContext} from "react"
 import { MappingContext } from "@/context/Mapping/MappingContext"
+import { askGpt } from "@/utils/askGpt"
+import { BlockCodeSC } from "./style"
 export const Input = () => {
   const {dispatch, body}= useContext(MappingContext)
 
@@ -13,21 +15,18 @@ export const Input = () => {
   }
   const handleSubmit =(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // askGpt()
+    askGpt()
   }
   return (
-    <>
+    <BlockCodeSC>
       <h1>Input</h1>
-      <form onSubmit={handleSubmit}>
-        <CodeMirror
-          theme={tokyoNight}
-          value={body}
-          height="350px"
-          extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
-          onChange={(value) => handleChange(value)}
-        />
-        <button>Generate</button>
-      </form>
-    </>
+      <CodeMirror
+        theme={tokyoNight}
+        value={body}
+        height="350px"
+        extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
+        onChange={(value) => handleChange(value)}
+      />
+    </BlockCodeSC>
   )
 }
