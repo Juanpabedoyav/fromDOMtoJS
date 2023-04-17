@@ -1,11 +1,13 @@
 import { Input } from "@/components/Input"
 import { Output } from "@/components/Output"
-import { MainScreenSC } from "./styles"
+import { ButtonGenerateSC, MainScreenSC } from "./styles"
 
 export const Main = () => {
   return (
     <>
-      <button>Generate</button>
+      <ButtonGenerateSC>
+        <button>Happy Scrapping!!</button>
+      </ButtonGenerateSC>
       <MainScreenSC>
         <Input/>
         <Output code="(() => {

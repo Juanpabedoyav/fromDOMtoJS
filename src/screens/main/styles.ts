@@ -1,17 +1,17 @@
 import styled from "styled-components"
 
 export const MainScreenSC = styled.div`
-margin: 5rem auto;
+margin: 0rem auto;
 justify-content: center;
 display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
-gap: 1rem;
+gap: 0.8rem;
 align-items: center;
-height: 80vh;
 div[class="cm-theme"], div[class="cm-scroller"]{
-   width: 500px;
-   
+   min-width: 600px;
+   min-width: 600px;
+    width: 600px;
 }
 .copy{
     right: 0;
@@ -21,4 +21,15 @@ div[class="cm-theme"], div[class="cm-scroller"]{
     padding: 0.5rem;
     }
  
+`
+
+export const ButtonGenerateSC = styled.div`
+
+button{
+    margin: 1rem auto;
+    display: block;
+    height: 50px;
+    width: 200px;
+    font-size: 1rem;
+}
 `
