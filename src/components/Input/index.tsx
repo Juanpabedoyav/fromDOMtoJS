@@ -17,18 +17,16 @@ export const Input = () => {
     askGpt()
   }
   return (
-    <>
+    <div style={{position:"relative", bottom: "10px", display:"flex", flexDirection:"column", margin:"0.5rem"}}>
+
       <h1>Input</h1>
-      <form onSubmit={handleSubmit}>
-        <CodeMirror
-          theme={tokyoNight}
-          value={body}
-          height="350px"
-          extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
-          onChange={(value) => handleChange(value)}
-        />
-        <button>Generate</button>
-      </form>
-    </>
+      <CodeMirror
+        theme={tokyoNight}
+        value={body}
+        height="350px"
+        extensions={[html({ autoCloseTags: true, selfClosingTags: true, })]}
+        onChange={(value) => handleChange(value)}
+      />
+    </div>
   )
 }
