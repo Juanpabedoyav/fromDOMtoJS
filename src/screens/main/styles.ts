@@ -26,7 +26,7 @@ div[class="cm-theme"], div[class="cm-scroller"]{
 export const ButtonGenerateSC = styled.div`
 
 button{
-    margin: 1rem auto;
+    margin: 3rem auto;
     display: block;
     height: 50px;
     width: 200px;
