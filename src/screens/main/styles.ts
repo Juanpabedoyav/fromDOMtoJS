@@ -23,13 +23,16 @@ div[class="cm-theme"], div[class="cm-scroller"]{
  
 `
 
-export const ButtonGenerateSC = styled.div`
+export const SectionGenerateSC = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 1.5rem auto;
 
 #generate{
-    margin: 3rem auto;
     display: block;
-    height: 50px;
-    width: 200px;
+    padding: 0.8rem;
     font-size: 1rem;
+    margin: 1rem auto;
 }
 `
