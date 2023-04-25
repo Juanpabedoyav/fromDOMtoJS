@@ -17,7 +17,7 @@ export const Generate = () => {
   
   
   const handleClick =  async() => {
-    const prompt = `Act as a Javascript developer with focus in DOM find the patterns ${body.slice(0,1000)} create a Javascript function with the pattern for extract info`
+    const prompt = `Act as a Javascript developer with focus in DOM find the patterns ${body.slice(0,1000)} create a Javascript function to extract job postin info`
     setText("Generate Code ...")
     askGpt(prompt).then(e =>{
       dispatch({type: "SET_MAPPING", payload: e})
